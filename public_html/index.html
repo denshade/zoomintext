@@ -31,10 +31,16 @@
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
       <div class="container">
-        <h1>Hello, world!</h1>
+        <h1>Visual Information-Seeking Mantra: Overview zoom and filter details on demand</h1>
         <button type="button" class="btn btn-info" onclick="expandToLowerLevel('browsingprocess');"><span class="glyphicon glyphicon-zoom-in" ></span></button>
         <button type="button" class="btn btn-info" onclick="expandToUpperLevel('browsingprocess');"><span  class="glyphicon glyphicon-zoom-out"></span></button>
-        <p id="browsingprocessdisplay" currentlevel="spaceview"></p>
+        <select id="currentLevel">
+            <option value="spaceview">space view</option>
+            <option value="laymenview">laymen view</option>
+            <option value="expertview">expert view</option>
+            <option value="perfectmodel">perfect model view</option>
+        </select>
+        <p id="browsingprocessdisplay"></p>
         <form>
             <input id="browsingprocess" type="hidden" value="{
  &quot;spaceview&quot;:&quot;The user checks out her favorite website&quot;,

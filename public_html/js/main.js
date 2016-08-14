@@ -1,8 +1,8 @@
 function expandToLowerLevel(dataid) 
 {
-    var currentLevel = document.getElementById(dataid+'display').getAttribute('currentLevel');
+    var currentLevel = document.getElementById('currentLevel').value;
     var nextView = getNextView(currentLevel);
-    document.getElementById(dataid+'display').setAttribute('currentLevel', nextView);
+    document.getElementById('currentLevel').value = nextView;
     refreshLevel(dataid);
 }
 
@@ -29,9 +29,9 @@ function getPrevView(currentLevel)
 }
 function expandToUpperLevel(dataid) 
 {
-    var currentLevel = document.getElementById(dataid+'display').getAttribute('currentLevel');
+    var currentLevel = document.getElementById('currentLevel').value;
     var nextView = getPrevView(currentLevel);
-    document.getElementById(dataid+'display').setAttribute('currentLevel', nextView);
+    document.getElementById('currentLevel').value = nextView;
     refreshLevel(dataid);
 
 }
@@ -48,8 +48,9 @@ function refreshLevel(dataid)
 {
     var jsonString = document.getElementById(dataid).value;
     var detailDocumentObject = JSON.parse(jsonString);
-    var currentlevel = document.getElementById(dataid+'display').getAttribute('currentlevel');
+    var currentlevel = document.getElementById('currentLevel').value;
     var data = detailDocumentObject[currentlevel];
     var para = document.getElementById(dataid+'display');
+    
     document.getElementById(dataid+'display').innerHTML = data;
 }
